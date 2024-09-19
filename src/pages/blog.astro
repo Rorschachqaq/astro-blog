@@ -1,0 +1,60 @@
+---
+import Layout from "../layouts/Layout.astro"
+import BlogCategories from "../components/BlogCategories";
+
+// 定义 Frontmatter 类型
+type Post = {
+    layout:string;
+    title:string;
+    subtitle:string;
+    date:string;
+    author:string;
+    category:string;
+    tags:Array<string>;
+    url:string;
+};
+
+// 定义分类的类型
+type Categories = {
+  [key: string]: Post[];
+};
+
+// 从 src/pages/posts/ 中获取所有 Markdown 文件
+const posts = await Astro.glob('../pages/posts/blogs/*/*.md');
+
+// 按分类整理博文
+const categories: Categories = posts.reduce<Categories>((acc, post) => {
+  const category = post.frontmatter.category || '其他';
+  if (!acc[category]) {
+    acc[category] = [];
+  }
+  // 确保 post.url 有值
+  if (post.url) {
+    acc[category].push({
+        layout:post.frontmatter.layout,
+      title: post.frontmatter.title,
+      subtitle: post.frontmatter.subtitle,
+      date: post.frontmatter.date,
+      author: post.frontmatter.author,
+      tags: post.frontmatter.tags,
+      category:post.frontmatter.category,
+      url: post.url,  // 这里确保 url 不会是 undefined
+    });
+  }
+  return acc;
+}, {});
+
+---
+<style>
+
+</style>
+
+<Layout>
+	<div slot="main">
+		<BlogCategories categories={categories} client:load />
+	</div>
+  
+	<div slot="content">
+		
+	</div>
+</Layout>

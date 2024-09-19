@@ -1,0 +1,47 @@
+/* src/styles/blog-content.css */
+.table-of-contents {
+  padding-top: 150px; /* 去除容器内边距 */
+  margin: 0; /* 去除容器外边距 */
+  list-style: none; /* 去掉默认的列表样式 */
+}
+
+.table-of-contents li {
+  margin: 0; /* 取消默认的 `margin` */
+  padding: 0; /* 取消默认的 `padding` */
+}
+
+.table-of-contents li > a {
+  font-weight: bold;
+  font-size: 14px;
+  white-space: nowrap;
+  text-decoration: none;
+  text-overflow: ellipsis;
+  color: #999999;
+  display: block; /* 使链接占据整个 `li` 的宽度 */
+  margin-bottom: 10px; /* 统一每个标题项之间的下间距 */
+
+}
+
+.table-of-contents li > a:hover {
+  text-decoration: underline;
+  color: aqua;
+}
+
+.table-of-contents a.active {
+  font-weight: bold;
+  color: red; /* 或其他高亮颜色 */
+}
+
+.table-of-contents li ul {
+  padding-left: 0; /* 取消嵌套列表的左边距 */
+}
+
+.table-of-contents ul {
+  padding: 0; /* 去除所有列表的内边距 */
+  margin: 0; /* 去除所有列表的外边距 */
+  list-style: none; /* 去掉所有列表的默认样式 */
+}
+
+.table-of-contents li > ul > li {
+  margin-top: 10px; /* 确保不同层级的标题之间有一致的上下间距 */
+}

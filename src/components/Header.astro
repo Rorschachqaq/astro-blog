@@ -1,0 +1,77 @@
+---
+
+---
+
+<style>
+.header {
+  display: grid; 
+  grid-template-columns: 1fr 1fr 1fr; 
+  grid-template-rows: 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "nav-left nav-center nav-right"; 
+  grid-area: header; 
+  padding-top: 10px;
+  /* border: 3px red solid; */
+  max-height: 100px;
+}
+.nav-left { grid-area: nav-left; }
+.nav-center { grid-area: nav-center; }
+.nav-right { grid-area: nav-right; }    
+
+nav {
+    background-color: transparent; /* 背景透明 */
+    padding: 1rem 2rem;
+    display: flex;
+    justify-content: space-between;
+  }
+
+  nav ul{
+    list-style: none;
+    display: flex;
+    justify-content:center;
+    margin: 0;
+    padding: 0;
+  }
+
+  nav ul li a {
+    color: black; /* 字体颜色为黑色 */
+    text-decoration: none;
+    font-size: 1.2rem;
+    padding: 0.5rem 1rem;
+    transition: background-color 0.3s, color 0.3s;
+  }
+
+  /* 悬停效果 */
+  nav ul li a:hover {
+    background-color: #f0f0f0; /* 悬停时的背景为浅灰色 */
+    border-radius: 5px;
+    color: black; /* 保持悬停时字体颜色为黑色 */
+  }
+
+</style>
+
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css">
+
+<div class="header">
+    <div class="nav-left">
+        <nav>
+            <ul>
+                <li><a href="/">Home</a></li>
+                <li><a href="/blog">Blog</a></li>
+                <li><a href="/project">Project</a></li>
+            </ul>
+        </nav>
+
+    </div>
+
+    <div class="nav-center"></div>
+
+    <div class="nav-right">
+        <nav class="nav-icons">
+            <ul>
+                <li><a href="https://github.com/Rorschachqaq" target="_blank"><i class="fab fa-github" style="font-size:24px;"/> Github</a></li>
+            </ul>
+        </nav>
+    </div>
+</div>

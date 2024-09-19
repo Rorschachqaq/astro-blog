@@ -1,0 +1,43 @@
+---
+import Layout from "../layouts/Layout.astro";
+
+import "../styles/github-markdown.css";
+import "../styles/markdown-code.css";
+import React from 'react';
+import BlogContent from '../components/BlogContent';
+const { frontmatter, content , headings} = Astro.props;
+
+---
+
+<style>
+.blog-main {
+  padding: 40px;
+  /* border: 2px black solid; */
+}
+
+.blog-content {
+  max-width: 0px;
+}
+
+</style>
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/KaTeX/0.15.0/katex.min.css" />
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/mermaid/10.2.3/mermaid.min.css">
+
+
+<Layout>
+  <div slot="main">
+    <div class="blog-main">
+      <!-- Wrap the slot content with the 'markdown-body' class -->
+      <div class="markdown-body">
+        <slot /> <!-- This is where the markdown content will go -->
+      </div>
+    </div>
+  </div>
+
+  <div slot="content">
+    <div class="blog-content">
+    <BlogContent headings={headings} />
+    </div>
+  </div>
+  
+</Layout>

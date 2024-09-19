@@ -1,0 +1,83 @@
+---
+import Header from "../components/Header.astro"
+import Footer from "../components/Footer.astro"
+---
+
+<style>
+.container {
+    min-height: 100vh;
+    display: grid; 
+    grid-template-columns: 2.6fr; 
+    grid-template-rows: minmax(2.5fr, 200px) minmax(auto, 2.5fr) minmax(0.1fr, 100px);
+    gap: 0px 0px; 
+    grid-template-areas: 
+    "header"
+    "main-body"
+    "footer"; 
+    margin: 2vh 22vw; /* 左右各 25% 的视口宽度 */
+    
+    /* border: 2px blue solid; */
+}
+
+.main-body {
+  display: grid; 
+  grid-template-columns: 1.7fr 0.3fr; 
+  grid-template-rows: 1fr; 
+  gap: 0px 0px; 
+  grid-template-areas: 
+    "main content"; 
+  grid-area: main-body; 
+  
+}
+.main { 
+    grid-area: main; 
+    
+    margin-right:20px;
+    /* border: 1px black solid; */
+    
+}
+.content { 
+    
+    max-height: 80vh;
+    grid-area: content; 
+    position:sticky;
+    top: calc(1vh - 50px); /* 距离顶部为视口高度的 50% 减去半个 .content 元素的高度 */
+    /*  border: 1px black solid; */
+}
+
+@media (max-width: 1200px) {
+    .container {
+        margin: 2vh 5vw; /* 减少内边距比例 */
+    }
+}
+</style>
+
+
+
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+    <link rel="stylesheet" href="/src/styles/global.css">
+    <meta name="viewport" content="width=device-width" />
+    <meta name="generator" content={Astro.generator} />
+    <title></title>
+  </head>
+
+  <body>
+	<div class="container">
+        <Header />
+
+        <div class="main-body">
+            <div class="main">
+                <slot name="main" />
+            </div>
+            <div class="content">
+                <slot name="content" />
+            </div>
+        </div>
+
+        <Footer />
+    </div>
+    </body>
+</html>

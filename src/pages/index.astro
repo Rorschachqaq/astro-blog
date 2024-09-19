@@ -1,16 +1,61 @@
 ---
+import Layout from "../layouts/Layout.astro"
 
 ---
 
-<html lang="en">
-	<head>
-		<meta charset="utf-8" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<meta name="viewport" content="width=device-width" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro</title>
-	</head>
-	<body>
-		<h1>Astro</h1>
-	</body>
-</html>
+<style>
+.index-main {
+	padding: 25px;
+  display: block;
+	
+}
+
+
+.name {
+	font-size: 2.5rem;
+  font-weight: bold; /* 粗体字 */
+  color: black; /* 字体颜色 */
+  text-align: center; /* 文本居中 */
+  position: relative; /* 相对定位 */
+  margin: 0 auto 20px; /* 上边距和下边距，自动左右边距使其居中 */
+}
+
+.name::after {
+  content: ''; /* 伪元素内容 */
+  display: block; /* 使其占据空间 */
+  width: 150px; /* 宽度50% */
+  height: 2px; /* 高度2px */
+  background-color: #abcfe6; /* 淡蓝色背景 */
+  position: absolute;
+  bottom: 0; /* 底部偏移 */
+  left: 50%; /* 初始位置在50% */
+  transform: translateX(-50%); /* 水平居中偏移 */
+}
+
+.introduction {
+	margin-left:20px;
+	margin-right:20px;
+  font-size: 1.2rem; /* 字体大小 */
+  color: #333; /* 字体颜色 */
+  text-align: left; /* 左对齐 */
+  line-height: 1.5;
+}
+
+</style>
+
+<Layout>
+	<div slot="main">
+		<div class="index-main">
+			<h1 class="name">Rorschach</h1>
+  			<div class="introduction">
+				<p >Hey, I'm Rorschach, a tech lover, a beginner developer, and a freedom seeker. Here is my personal blog to record my learning process and some thoughts. Go to the <a href="/blog" >Blog page.</a></p>
+				<p>嘿，我是Rorschach，一个热爱技术的学习者，一个初阶开发者，一个向往自由的人。这里是我的个人博客，用于记录我的学习过程以及一些思考。前往 <a href="/blog" >博客页面</a> 。</p>
+
+			</div>
+		</div>
+	</div>
+  
+	<div slot="content">
+		
+	</div>
+</Layout>

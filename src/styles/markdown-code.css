@@ -1,0 +1,45 @@
+.markdown-body pre {
+    background-color: #f8f8f8 !important;
+    counter-reset: line-number;
+    position: relative;
+    padding-left: 2rem ; /* Space for line numbers */
+    padding-top: 2px;
+    padding-right: 2px;
+    padding-bottom: 2px;
+    
+  }
+  
+  .markdown-body pre code {
+    display: block;
+    padding-left: 1rem ;
+    border-radius: 1px;
+    font-size: 1.2em;
+    background-color: #f8f8f8 ;
+    border-left: 1px solid rgba(153, 153, 153, 0.5);
+    max-width: 600px;
+    overflow: hidden; /* Hide overflow content */
+  white-space: pre-wrap; /* Preserve whitespace and wrap lines */
+  word-break: normal; /* Prevent breaking within words */
+  overflow-wrap: normal; /* Normal wrap behavior */
+
+  }
+
+
+  
+  .markdown-body pre code .line::before {
+    counter-increment: line-number;
+    content: counter(line-number);
+    position: absolute;
+    left: 0.5rem;
+    width: 1rem;
+    text-align: right;
+    padding-right: 1rem;
+    
+    color: #999999;
+    font-size: 1em;
+    
+  }
+
+  .markdown-body pre code .line:last-of-type::before {
+    display: none;
+  }
