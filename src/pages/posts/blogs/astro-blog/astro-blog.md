@@ -200,7 +200,11 @@ import "../styles/markdown-code.css"; // 优先使用后导入
 
 
 
-### 4.3 待补充
+### 4.3 项目部署
+
+项目最好还是部署在 netlify 上，尝试 Github Pages 丢失了部分 css 样式，毕竟官方教程是部署在 netlify 上。
+
+### 4.4 待补充
 
 
 
