@@ -7,6 +7,9 @@ import remarkMermaid from 'remark-mermaid';
 
 // https://astro.build/config
 export default defineConfig({
+  site: 'https://lhyrise.github.io',
+  base: 'lhyrise.github.io',
+
   integrations: [
     react(),
   ],
