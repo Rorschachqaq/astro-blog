@@ -1,6 +1,6 @@
 ---
 layout: "/src/layouts/BlogPostLayout.astro"
-title: "astro 架构博客搭建"
+title: "Astro 架构博客搭建"
 subtitle: " freeCodeCamp 前端学习阶段练习"
 date: "2024-09-19"
 author: "Rorschach"
